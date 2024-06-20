@@ -14,7 +14,9 @@ public class ProductService {
     @Autowired
     private IProductRepository productRepository;
 
-    public List<Product> getAllProducts() {return productRepository.findAll();}
+    public List<Product> getAllProducts() {
+        return productRepository.findAll();
+    }
 
     public void addProduct(Product product) {
         productRepository.save(product);
@@ -35,6 +37,4 @@ public class ProductService {
     public List<Product> searchProductsByNameAndByAuthor(String keyword) {
         return productRepository.searchBooks(keyword);
     }
-
-
 }
